@@ -687,19 +687,9 @@
     </div>
 
     <script>
-        // Store the start time - this persists across page refreshes
-        const STORAGE_KEY = 'bhupesh_credit_card_timer_start';
-        
-        function getStartTime() {
-            let startTime = localStorage.getItem(STORAGE_KEY);
-            if (!startTime) {
-                startTime = Date.now().toString();
-                localStorage.setItem(STORAGE_KEY, startTime);
-            }
-            return parseInt(startTime);
-        }
-
-        const startTime = getStartTime();
+        // FIXED START TIME - January 5, 2026 at the moment Bhupesh started his credit card battle
+        // This is hardcoded so it's the same for everyone, on every device, forever!
+        const startTime = new Date('2026-01-05T18:30:00+05:30').getTime(); // IST timezone
         
         // Display start date
         const startDate = new Date(startTime);
