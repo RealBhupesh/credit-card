@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>until Bhupesh gets a credit card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --text-tertiary: rgba(255, 255, 255, 0.35);
+            --accent: #ff4500;
+            --accent-gold: #d4af37;
+            --accent-glow: rgba(255, 69, 0, 0.2);
+            --ember: #ff6b35;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Warrior background layers */
+        .warrior-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* Dark atmospheric gradient */
+        .warrior-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse 100% 60% at 50% 100%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 20, 20, 0.9) 0%, transparent 50%),
+                radial-gradient(ellipse 120% 80% at 20% 80%, rgba(100, 30, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(ellipse 120% 80% at 80% 80%, rgba(100, 30, 0, 0.1) 0%, transparent 40%);
+        }
+
+        /* Warrior silhouette - left */
+        .warrior-left {
+            position: absolute;
+            bottom: 0;
+            left: -5%;
+            width: 35%;
+            height: 90%;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 70%);
+            clip-path: polygon(
+                20% 100%,
+                25% 85%,
+                22% 75%,
+                28% 70%,
+                26% 60%,
+                30% 55%,
+                28% 45%,
+                35% 40%,
+                32% 35%,
+                40% 25%,
+                38% 20%,
+                45% 15%,
+                50% 10%,
+                48% 8%,
+                52% 5%,
+                55% 8%,
+                58% 15%,
+                60% 20%,
+                55% 25%,
+                58% 35%,
+                52% 45%,
+                55% 55%,
+                48% 65%,
+                52% 75%,
+                45% 85%,
+                50% 100%
+            );
+            opacity: 0.4;
+            animation: warriorBreath 6s ease-in-out infinite;
+        }
+
+        /* Warrior silhouette - right */
+        .warrior-right {
+            position: absolute;
+            bottom: 0;
+            right: -5%;
+            width: 35%;
+            height: 90%;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 70%);
+            clip-path: polygon(
+                80% 100%,
+                75% 85%,
+                78% 75%,
+                72% 70%,
+                74% 60%,
+                70% 55%,
+                72% 45%,
+                65% 40%,
+                68% 35%,
+                60% 25%,
+                62% 20%,
+                55% 15%,
+                50% 10%,
+                52% 8%,
+                48% 5%,
+                45% 8%,
+                42% 15%,
+                40% 20%,
+                45% 25%,
+                42% 35%,
+                48% 45%,
+                45% 55%,
+                52% 65%,
+                48% 75%,
+                55% 85%,
+                50% 100%
+            );
+            opacity: 0.4;
+            animation: warriorBreath 6s ease-in-out infinite 0.5s;
+        }
+
+        /* Crossed swords emblem */
+        .swords-emblem {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.04;
+        }
+
+        .sword-left, .sword-right {
+            position: absolute;
+            width: 8px;
+            height: 400px;
+            background: linear-gradient(180deg, 
+                transparent 0%,
+                rgba(212, 175, 55, 0.8) 10%,
+                rgba(255, 255, 255, 0.9) 50%,
+                rgba(212, 175, 55, 0.8) 90%,
+                transparent 100%
+            );
+            top: 50%;
+            left: 50%;
+            border-radius: 4px;
+        }
+
+        .sword-left {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .sword-right {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .sword-left::before, .sword-right::before {
+            content: '';
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 10px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            border-radius: 5px;
+        }
+
+        .sword-left::after, .sword-right::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 60px;
+            background: linear-gradient(180deg, rgba(139, 69, 19, 0.8), rgba(101, 67, 33, 0.9));
+            border-radius: 3px;
+        }
+
+        /* Shield behind swords */
+        .shield {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 300px;
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            opacity: 0.08;
+        }
+
+        .shield::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 220px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+        }
+
+        /* Floating embers */
+        .embers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--ember);
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(255, 107, 53, 0.6);
+            animation: floatEmber 8s ease-in-out infinite;
+        }
+
+        .ember:nth-child(1) { left: 10%; bottom: 10%; animation-delay: 0s; animation-duration: 7s; }
+        .ember:nth-child(2) { left: 20%; bottom: 5%; animation-delay: 1s; animation-duration: 9s; }
+        .ember:nth-child(3) { left: 35%; bottom: 8%; animation-delay: 2s; animation-duration: 6s; }
+        .ember:nth-child(4) { left: 50%; bottom: 3%; animation-delay: 0.5s; animation-duration: 8s; }
+        .ember:nth-child(5) { left: 65%; bottom: 7%; animation-delay: 1.5s; animation-duration: 7s; }
+        .ember:nth-child(6) { left: 80%; bottom: 4%; animation-delay: 2.5s; animation-duration: 9s; }
+        .ember:nth-child(7) { left: 90%; bottom: 10%; animation-delay: 0.8s; animation-duration: 6s; }
+        .ember:nth-child(8) { left: 15%; bottom: 15%; animation-delay: 3s; animation-duration: 10s; }
+        .ember:nth-child(9) { left: 75%; bottom: 12%; animation-delay: 1.2s; animation-duration: 8s; }
+        .ember:nth-child(10) { left: 45%; bottom: 6%; animation-delay: 2.2s; animation-duration: 7s; }
+
+        /* Fog/mist effect */
+        .fog {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, 
+                rgba(30, 20, 20, 0.6) 0%,
+                rgba(20, 15, 15, 0.3) 40%,
+                transparent 100%
+            );
+            animation: fogDrift 20s ease-in-out infinite;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 100%;
+        }
+
+        .title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+            font-weight: 500;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInDown 1s ease-out 0.2s forwards;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            background: linear-gradient(180deg, #ffffff 0%, rgba(212, 175, 55, 0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInDown 1s ease-out 0.4s forwards;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .timer-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timer {
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 200;
+            letter-spacing: -0.02em;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            opacity: 0;
+            animation: fadeInScale 1.2s ease-out 0.6s forwards;
+            text-shadow: 0 0 60px rgba(255, 69, 0, 0.3);
+        }
+
+        .timer-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            animation: pulseGlow 4s ease-in-out infinite 1s;
+        }
+
+        .labels {
+            display: flex;
+            justify-content: center;
+            gap: clamp(2rem, 8vw, 6rem);
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .label-group {
+            text-align: center;
+        }
+
+        .label-value {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 300;
+            color: var(--text-primary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .label-text {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.5rem, 1.2vw, 0.75rem);
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-top: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .started-info {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            letter-spacing: 0.05em;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.2s forwards;
+            z-index: 10;
+        }
+
+        .credit-card-icon {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            width: 60px;
+            height: 38px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 6px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .credit-card-icon::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 8px;
+            width: 14px;
+            height: 10px;
+            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+            border-radius: 2px;
+        }
+
+        .credit-card-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+            height: 3px;
+            background: rgba(212, 175, 55, 0.3);
+            border-radius: 1px;
+        }
+
+        /* Battle indicator */
+        .live-indicator {
+            position: absolute;
+            top: 3rem;
+            left: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+            z-index: 10;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+        }
+
+        .live-text {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        /* Battle quote */
+        .battle-quote {
+            position: absolute;
+            bottom: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            font-style: italic;
+            letter-spacing: 0.1em;
+            color: rgba(212, 175, 55, 0.4);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.9);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes warriorBreath {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scaleY(1.02);
+            }
+        }
+
+        @keyframes floatEmber {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(30px) scale(0.3);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fogDrift {
+            0%, 100% {
+                transform: translateX(-5%);
+            }
+            50% {
+                transform: translateX(5%);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .labels {
+                gap: 1.5rem;
+            }
+            
+            .credit-card-icon {
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 45px;
+                height: 28px;
+            }
+
+            .live-indicator {
+                top: 1.5rem;
+                left: 1.5rem;
+            }
+
+            .started-info {
+                bottom: 2rem;
+            }
+
+            .battle-quote {
+                bottom: 4.5rem;
+                font-size: 0.6rem;
+            }
+
+            .warrior-left, .warrior-right {
+                width: 45%;
+            }
+
+            .swords-emblem {
+                width: 350px;
+                height: 350px;
+            }
+
+            .sword-left, .sword-right {
+                height: 250px;
+            }
+
+            .shield {
+                width: 150px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Warrior Background Elements -->
+    <div class="warrior-bg">
+        <div class="warrior-left"></div>
+        <div class="warrior-right"></div>
+        <div class="fog"></div>
+        
+        <div class="swords-emblem">
+            <div class="shield"></div>
+            <div class="sword-left"></div>
+            <div class="sword-right"></div>
+        </div>
+
+        <div class="embers">
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+        </div>
+    </div>
+
+    <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span class="live-text">Battle Ongoing</span>
+    </div>
+
+    <div class="credit-card-icon"></div>
+
+    <div class="container">
+        <p class="title">⚔️ Time in Battle ⚔️</p>
+        <h1 class="subtitle">until Bhupesh gets a credit card</h1>
+        
+        <div class="timer-container">
+            <div class="timer-glow"></div>
+            <div class="timer" id="timer">00:00:00:00</div>
+        </div>
+
+        <div class="labels">
+            <div class="label-group">
+                <div class="label-value" id="days">00</div>
+                <div class="label-text">Days</div>
+            </div>
+            <div class="label-group">
+                <div class="label-value" id="hours">00</div>
+                <div class="label-text">Hours</div>
+            </div>
+            <div class="label-group">
+                <div class="label-value" id="minutes">00</div>
+                <div class="label-text">Minutes</div>
+            </div>
+            <div class="label-group">
+                <div class="label-value" id="seconds">00</div>
+                <div class="label-text">Seconds</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="battle-quote">"Victory awaits the one who never surrenders"</div>
+
+    <div class="started-info">
+        The battle began on <span id="start-date"></span>
+    </div>
+
+    <script>
+        // Store the start time - this persists across page refreshes
+        const STORAGE_KEY = 'bhupesh_credit_card_timer_start';
+        
+        function getStartTime() {
+            let startTime = localStorage.getItem(STORAGE_KEY);
+            if (!startTime) {
+                startTime = Date.now().toString();
+                localStorage.setItem(STORAGE_KEY, startTime);
+            }
+            return parseInt(startTime);
+        }
+
+        const startTime = getStartTime();
+        
+        // Display start date
+        const startDate = new Date(startTime);
+        const options = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        document.getElementById('start-date').textContent = startDate.toLocaleDateString('en-US', options);
+
+        function pad(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        function updateTimer() {
+            const now = Date.now();
+            const elapsed = now - startTime;
+
+            const seconds = Math.floor(elapsed / 1000) % 60;
+            const minutes = Math.floor(elapsed / (1000 * 60)) % 60;
+            const hours = Math.floor(elapsed / (1000 * 60 * 60)) % 24;
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+
+            // Update main timer display
+            document.getElementById('timer').textContent = 
+                `${pad(days)}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+
+            // Update individual labels
+            document.getElementById('days').textContent = pad(days);
+            document.getElementById('hours').textContent = pad(hours);
+            document.getElementById('minutes').textContent = pad(minutes);
+            document.getElementById('seconds').textContent = pad(seconds);
+        }
+
+        // Update immediately and then every second
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+        // Prevent any interaction that might pause the timer
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === ' ') {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
