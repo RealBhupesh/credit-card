@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Bhupesh got a credit card</title>
+    <title>🎉 Bhupesh Finally Got a Credit Card!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -17,15 +15,17 @@
         }
 
         :root {
-            --bg-primary: #000000;
-            --bg-secondary: #0a0a0a;
+            --bg-primary: #0a0a12;
+            --bg-secondary: #12121f;
             --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.6);
-            --text-tertiary: rgba(255, 255, 255, 0.35);
-            --accent: #ff4500;
-            --accent-gold: #d4af37;
-            --accent-glow: rgba(255, 69, 0, 0.2);
-            --ember: #ff6b35;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --gold: #ffd700;
+            --gold-light: #ffec8b;
+            --gold-dark: #b8860b;
+            --rose: #ff6b9d;
+            --purple: #a855f7;
+            --cyan: #22d3ee;
+            --emerald: #10b981;
         }
 
         html, body {
@@ -34,7 +34,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Cormorant Garamond', Georgia, serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             display: flex;
@@ -45,8 +45,8 @@
             position: relative;
         }
 
-        /* Warrior background layers */
-        .warrior-bg {
+        /* Celebration background */
+        .celebration-bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -56,8 +56,7 @@
             pointer-events: none;
         }
 
-        /* Dark atmospheric gradient */
-        .warrior-bg::before {
+        .celebration-bg::before {
             content: '';
             position: absolute;
             top: 0;
@@ -65,218 +64,140 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(ellipse 100% 60% at 50% 100%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 20, 20, 0.9) 0%, transparent 50%),
-                radial-gradient(ellipse 120% 80% at 20% 80%, rgba(100, 30, 0, 0.1) 0%, transparent 40%),
-                radial-gradient(ellipse 120% 80% at 80% 80%, rgba(100, 30, 0, 0.1) 0%, transparent 40%);
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 20% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
         }
 
-        /* Warrior silhouette - left */
-        .warrior-left {
-            position: absolute;
-            bottom: 0;
-            left: -5%;
-            width: 35%;
-            height: 90%;
-            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 70%);
-            clip-path: polygon(
-                20% 100%,
-                25% 85%,
-                22% 75%,
-                28% 70%,
-                26% 60%,
-                30% 55%,
-                28% 45%,
-                35% 40%,
-                32% 35%,
-                40% 25%,
-                38% 20%,
-                45% 15%,
-                50% 10%,
-                48% 8%,
-                52% 5%,
-                55% 8%,
-                58% 15%,
-                60% 20%,
-                55% 25%,
-                58% 35%,
-                52% 45%,
-                55% 55%,
-                48% 65%,
-                52% 75%,
-                45% 85%,
-                50% 100%
-            );
-            opacity: 0.4;
-            animation: warriorBreath 6s ease-in-out infinite;
-        }
-
-        /* Warrior silhouette - right */
-        .warrior-right {
-            position: absolute;
-            bottom: 0;
-            right: -5%;
-            width: 35%;
-            height: 90%;
-            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, transparent 70%);
-            clip-path: polygon(
-                80% 100%,
-                75% 85%,
-                78% 75%,
-                72% 70%,
-                74% 60%,
-                70% 55%,
-                72% 45%,
-                65% 40%,
-                68% 35%,
-                60% 25%,
-                62% 20%,
-                55% 15%,
-                50% 10%,
-                52% 8%,
-                48% 5%,
-                45% 8%,
-                42% 15%,
-                40% 20%,
-                45% 25%,
-                42% 35%,
-                48% 45%,
-                45% 55%,
-                52% 65%,
-                48% 75%,
-                55% 85%,
-                50% 100%
-            );
-            opacity: 0.4;
-            animation: warriorBreath 6s ease-in-out infinite 0.5s;
-        }
-
-        /* Crossed swords emblem */
-        .swords-emblem {
+        /* Animated golden rays */
+        .rays {
             position: absolute;
             top: 50%;
             left: 50%;
+            width: 200vmax;
+            height: 200vmax;
             transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            opacity: 0.04;
-        }
-
-        .sword-left, .sword-right {
-            position: absolute;
-            width: 8px;
-            height: 400px;
-            background: linear-gradient(180deg, 
-                transparent 0%,
-                rgba(212, 175, 55, 0.8) 10%,
-                rgba(255, 255, 255, 0.9) 50%,
-                rgba(212, 175, 55, 0.8) 90%,
-                transparent 100%
+            background: conic-gradient(
+                from 0deg,
+                transparent 0deg,
+                rgba(255, 215, 0, 0.03) 10deg,
+                transparent 20deg,
+                transparent 30deg,
+                rgba(255, 215, 0, 0.03) 40deg,
+                transparent 50deg,
+                transparent 60deg,
+                rgba(255, 215, 0, 0.03) 70deg,
+                transparent 80deg,
+                transparent 90deg,
+                rgba(255, 215, 0, 0.03) 100deg,
+                transparent 110deg,
+                transparent 120deg,
+                rgba(255, 215, 0, 0.03) 130deg,
+                transparent 140deg,
+                transparent 150deg,
+                rgba(255, 215, 0, 0.03) 160deg,
+                transparent 170deg,
+                transparent 180deg,
+                rgba(255, 215, 0, 0.03) 190deg,
+                transparent 200deg,
+                transparent 210deg,
+                rgba(255, 215, 0, 0.03) 220deg,
+                transparent 230deg,
+                transparent 240deg,
+                rgba(255, 215, 0, 0.03) 250deg,
+                transparent 260deg,
+                transparent 270deg,
+                rgba(255, 215, 0, 0.03) 280deg,
+                transparent 290deg,
+                transparent 300deg,
+                rgba(255, 215, 0, 0.03) 310deg,
+                transparent 320deg,
+                transparent 330deg,
+                rgba(255, 215, 0, 0.03) 340deg,
+                transparent 350deg,
+                transparent 360deg
             );
-            top: 50%;
-            left: 50%;
-            border-radius: 4px;
+            animation: rotateRays 60s linear infinite;
         }
 
-        .sword-left {
-            transform: translate(-50%, -50%) rotate(-45deg);
+        @keyframes rotateRays {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        .sword-right {
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .sword-left::before, .sword-right::before {
-            content: '';
-            position: absolute;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 10px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
-            border-radius: 5px;
-        }
-
-        .sword-left::after, .sword-right::after {
-            content: '';
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 60px;
-            background: linear-gradient(180deg, rgba(139, 69, 19, 0.8), rgba(101, 67, 33, 0.9));
-            border-radius: 3px;
-        }
-
-        /* Shield behind swords */
-        .shield {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 250px;
-            height: 300px;
-            border: 3px solid rgba(212, 175, 55, 0.3);
-            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-            opacity: 0.08;
-        }
-
-        .shield::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 180px;
-            height: 220px;
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-        }
-
-        /* Floating embers */
-        .embers {
+        /* Confetti */
+        .confetti-container {
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            pointer-events: none;
         }
 
-        .ember {
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            animation: confettiFall linear infinite;
+        }
+
+        .confetti:nth-child(1) { left: 5%; background: var(--gold); animation-duration: 4s; animation-delay: 0s; }
+        .confetti:nth-child(2) { left: 10%; background: var(--rose); animation-duration: 5s; animation-delay: 0.5s; border-radius: 50%; }
+        .confetti:nth-child(3) { left: 15%; background: var(--purple); animation-duration: 4.5s; animation-delay: 1s; }
+        .confetti:nth-child(4) { left: 20%; background: var(--cyan); animation-duration: 5.5s; animation-delay: 0.3s; border-radius: 50%; }
+        .confetti:nth-child(5) { left: 25%; background: var(--emerald); animation-duration: 4.2s; animation-delay: 0.8s; }
+        .confetti:nth-child(6) { left: 30%; background: var(--gold-light); animation-duration: 5.2s; animation-delay: 1.2s; border-radius: 50%; }
+        .confetti:nth-child(7) { left: 35%; background: var(--rose); animation-duration: 4.8s; animation-delay: 0.1s; }
+        .confetti:nth-child(8) { left: 40%; background: var(--gold); animation-duration: 5.1s; animation-delay: 0.6s; border-radius: 50%; }
+        .confetti:nth-child(9) { left: 45%; background: var(--purple); animation-duration: 4.4s; animation-delay: 1.5s; }
+        .confetti:nth-child(10) { left: 50%; background: var(--cyan); animation-duration: 5.3s; animation-delay: 0.2s; border-radius: 50%; }
+        .confetti:nth-child(11) { left: 55%; background: var(--emerald); animation-duration: 4.6s; animation-delay: 0.9s; }
+        .confetti:nth-child(12) { left: 60%; background: var(--gold); animation-duration: 5.4s; animation-delay: 1.3s; border-radius: 50%; }
+        .confetti:nth-child(13) { left: 65%; background: var(--rose); animation-duration: 4.3s; animation-delay: 0.4s; }
+        .confetti:nth-child(14) { left: 70%; background: var(--gold-light); animation-duration: 5.6s; animation-delay: 0.7s; border-radius: 50%; }
+        .confetti:nth-child(15) { left: 75%; background: var(--purple); animation-duration: 4.7s; animation-delay: 1.1s; }
+        .confetti:nth-child(16) { left: 80%; background: var(--cyan); animation-duration: 5.0s; animation-delay: 0.35s; border-radius: 50%; }
+        .confetti:nth-child(17) { left: 85%; background: var(--emerald); animation-duration: 4.9s; animation-delay: 1.4s; }
+        .confetti:nth-child(18) { left: 90%; background: var(--gold); animation-duration: 5.7s; animation-delay: 0.85s; border-radius: 50%; }
+        .confetti:nth-child(19) { left: 95%; background: var(--rose); animation-duration: 4.1s; animation-delay: 0.15s; }
+        .confetti:nth-child(20) { left: 8%; background: var(--gold-light); animation-duration: 5.8s; animation-delay: 1.6s; border-radius: 50%; }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg) scale(0.5);
+                opacity: 0.3;
+            }
+        }
+
+        /* Sparkles */
+        .sparkle {
             position: absolute;
             width: 4px;
             height: 4px;
-            background: var(--ember);
+            background: white;
             border-radius: 50%;
-            box-shadow: 0 0 6px 2px rgba(255, 107, 53, 0.6);
-            animation: floatEmber 8s ease-in-out infinite;
+            box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.8);
+            animation: sparkle 2s ease-in-out infinite;
         }
 
-        .ember:nth-child(1) { left: 10%; bottom: 10%; animation-delay: 0s; animation-duration: 7s; }
-        .ember:nth-child(2) { left: 20%; bottom: 5%; animation-delay: 1s; animation-duration: 9s; }
-        .ember:nth-child(3) { left: 35%; bottom: 8%; animation-delay: 2s; animation-duration: 6s; }
-        .ember:nth-child(4) { left: 50%; bottom: 3%; animation-delay: 0.5s; animation-duration: 8s; }
-        .ember:nth-child(5) { left: 65%; bottom: 7%; animation-delay: 1.5s; animation-duration: 7s; }
-        .ember:nth-child(6) { left: 80%; bottom: 4%; animation-delay: 2.5s; animation-duration: 9s; }
-        .ember:nth-child(7) { left: 90%; bottom: 10%; animation-delay: 0.8s; animation-duration: 6s; }
-        .ember:nth-child(8) { left: 15%; bottom: 15%; animation-delay: 3s; animation-duration: 10s; }
-        .ember:nth-child(9) { left: 75%; bottom: 12%; animation-delay: 1.2s; animation-duration: 8s; }
-        .ember:nth-child(10) { left: 45%; bottom: 6%; animation-delay: 2.2s; animation-duration: 7s; }
+        .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 30%; left: 85%; animation-delay: 0.3s; }
+        .sparkle:nth-child(3) { top: 60%; left: 5%; animation-delay: 0.6s; }
+        .sparkle:nth-child(4) { top: 70%; left: 90%; animation-delay: 0.9s; }
+        .sparkle:nth-child(5) { top: 15%; left: 50%; animation-delay: 1.2s; }
+        .sparkle:nth-child(6) { top: 80%; left: 30%; animation-delay: 0.2s; }
+        .sparkle:nth-child(7) { top: 85%; left: 70%; animation-delay: 0.5s; }
+        .sparkle:nth-child(8) { top: 10%; left: 25%; animation-delay: 0.8s; }
 
-        /* Fog/mist effect */
-        .fog {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to top, 
-                rgba(30, 20, 20, 0.6) 0%,
-                rgba(20, 15, 15, 0.3) 40%,
-                transparent 100%
-            );
-            animation: fogDrift 20s ease-in-out infinite;
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
         }
 
         .container {
@@ -287,32 +208,60 @@
             max-width: 100%;
         }
 
-        .title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(0.9rem, 2.5vw, 1.3rem);
-            font-weight: 500;
+        /* Victory badge */
+        .victory-badge {
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #000;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            font-weight: 700;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
             opacity: 0;
-            animation: fadeInDown 1s ease-out 0.2s forwards;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+            box-shadow: 0 4px 30px rgba(255, 215, 0, 0.4);
         }
 
-        .subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            background: linear-gradient(180deg, #ffffff 0%, rgba(212, 175, 55, 0.9) 100%);
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #ffffff 0%, var(--gold) 50%, var(--gold-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 4rem;
+            margin-bottom: 0.5rem;
             opacity: 0;
-            animation: fadeInDown 1s ease-out 0.4s forwards;
-            text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .timer-label {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.8s forwards;
         }
 
         .timer-container {
@@ -321,14 +270,18 @@
         }
 
         .timer {
-            font-size: clamp(4rem, 15vw, 12rem);
-            font-weight: 200;
-            letter-spacing: -0.02em;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 12vw, 9rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
             font-variant-numeric: tabular-nums;
             line-height: 1;
             opacity: 0;
-            animation: fadeInScale 1.2s ease-out 0.6s forwards;
-            text-shadow: 0 0 60px rgba(255, 69, 0, 0.3);
+            animation: scaleIn 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+            background: linear-gradient(180deg, #ffffff 30%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .timer-glow {
@@ -338,19 +291,18 @@
             transform: translate(-50%, -50%);
             width: 100%;
             height: 200%;
-            background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 60%);
+            background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.15) 0%, transparent 60%);
             pointer-events: none;
-            opacity: 0;
-            animation: pulseGlow 4s ease-in-out infinite 1s;
+            animation: pulseGlow 3s ease-in-out infinite;
         }
 
         .labels {
             display: flex;
             justify-content: center;
-            gap: clamp(2rem, 8vw, 6rem);
+            gap: clamp(2rem, 8vw, 5rem);
             margin-top: 2rem;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 0.8s forwards;
+            animation: fadeInUp 1s ease-out 1s forwards;
         }
 
         .label-group {
@@ -358,52 +310,70 @@
         }
 
         .label-value {
-            font-size: clamp(1.5rem, 4vw, 3rem);
-            font-weight: 300;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
             color: var(--text-primary);
             font-variant-numeric: tabular-nums;
         }
 
         .label-text {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(0.5rem, 1.2vw, 0.75rem);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(0.5rem, 1.2vw, 0.7rem);
             font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--accent-gold);
+            color: var(--gold);
             margin-top: 0.5rem;
-            opacity: 0.7;
+            opacity: 0.8;
+        }
+
+        .celebration-message {
+            margin-top: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: rgba(255, 215, 0, 0.7);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.2s forwards;
         }
 
         .started-info {
             position: absolute;
-            bottom: 3rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
             letter-spacing: 0.05em;
             opacity: 0;
-            animation: fadeIn 1s ease-out 1.2s forwards;
+            animation: fadeIn 1s ease-out 1.4s forwards;
             z-index: 10;
+            text-align: center;
         }
 
+        .started-info span {
+            color: var(--gold);
+        }
+
+        /* Credit card icon - now golden and celebrating */
         .credit-card-icon {
             position: absolute;
-            top: 3rem;
-            right: 3rem;
-            width: 60px;
-            height: 38px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 6px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(139, 69, 19, 0.1) 100%);
+            top: 2rem;
+            right: 2rem;
+            width: 70px;
+            height: 44px;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(184, 134, 11, 0.2) 100%);
             opacity: 0;
-            animation: fadeIn 1s ease-out 1s forwards;
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s forwards;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             z-index: 10;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
         }
 
         .credit-card-icon::before {
@@ -411,85 +381,117 @@
             position: absolute;
             top: 10px;
             left: 8px;
-            width: 14px;
-            height: 10px;
-            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
-            border-radius: 2px;
+            width: 16px;
+            height: 12px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 3px;
         }
 
         .credit-card-icon::after {
-            content: '';
+            content: '✓';
             position: absolute;
-            bottom: 8px;
-            left: 8px;
             right: 8px;
-            height: 3px;
-            background: rgba(212, 175, 55, 0.3);
-            border-radius: 1px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: var(--emerald);
+            font-weight: bold;
         }
 
-        /* Battle indicator */
-        .live-indicator {
+        /* Victory indicator */
+        .victory-indicator {
             position: absolute;
-            top: 3rem;
-            left: 3rem;
+            top: 2rem;
+            left: 2rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             opacity: 0;
             animation: fadeIn 1s ease-out 1s forwards;
             z-index: 10;
         }
 
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
+        .victory-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--emerald);
             border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
-            box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
         }
 
-        .live-text {
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
+        .victory-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--accent-gold);
+            color: var(--emerald);
+            font-weight: 600;
         }
 
-        /* Battle quote */
-        .battle-quote {
+        /* Firework bursts */
+        .firework {
             position: absolute;
-            bottom: 6rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Cinzel', serif;
-            font-size: 0.7rem;
-            font-style: italic;
-            letter-spacing: 0.1em;
-            color: rgba(212, 175, 55, 0.4);
-            opacity: 0;
-            animation: fadeIn 1s ease-out 1.5s forwards;
-            z-index: 10;
-            white-space: nowrap;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: firework 2s ease-out infinite;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
+        .firework:nth-child(1) { top: 15%; left: 20%; background: var(--gold); animation-delay: 0s; }
+        .firework:nth-child(2) { top: 25%; left: 75%; background: var(--rose); animation-delay: 0.5s; }
+        .firework:nth-child(3) { top: 60%; left: 15%; background: var(--cyan); animation-delay: 1s; }
+        .firework:nth-child(4) { top: 70%; left: 80%; background: var(--purple); animation-delay: 1.5s; }
+
+        @keyframes firework {
+            0% {
+                transform: scale(0);
                 opacity: 1;
-                transform: translateY(0);
+                box-shadow: 
+                    0 -30px 0 var(--gold),
+                    0 30px 0 var(--gold),
+                    -30px 0 0 var(--rose),
+                    30px 0 0 var(--rose),
+                    -21px -21px 0 var(--cyan),
+                    21px -21px 0 var(--cyan),
+                    -21px 21px 0 var(--purple),
+                    21px 21px 0 var(--purple);
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+                box-shadow: 
+                    0 -60px 0 transparent,
+                    0 60px 0 transparent,
+                    -60px 0 0 transparent,
+                    60px 0 0 transparent,
+                    -42px -42px 0 transparent,
+                    42px -42px 0 transparent,
+                    -42px 42px 0 transparent,
+                    42px 42px 0 transparent;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
             }
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -497,10 +499,10 @@
             }
         }
 
-        @keyframes fadeInScale {
+        @keyframes scaleIn {
             from {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: scale(0.8);
             }
             to {
                 opacity: 1;
@@ -513,229 +515,126 @@
             to { opacity: 1; }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.5;
-                transform: scale(0.9);
-            }
-        }
-
         @keyframes pulseGlow {
-            0%, 100% {
-                opacity: 0.3;
-            }
-            50% {
-                opacity: 0.7;
-            }
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
         }
 
-        @keyframes warriorBreath {
-            0%, 100% {
-                opacity: 0.4;
-                transform: scaleY(1);
-            }
-            50% {
-                opacity: 0.5;
-                transform: scaleY(1.02);
-            }
-        }
-
-        @keyframes floatEmber {
-            0% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(30px) scale(0.3);
-                opacity: 0;
-            }
-        }
-
-        @keyframes fogDrift {
-            0%, 100% {
-                transform: translateX(-5%);
-            }
-            50% {
-                transform: translateX(5%);
-            }
-        }
-
-        /* Responsive adjustments */
+        /* Responsive */
         @media (max-width: 768px) {
             .labels {
                 gap: 1.5rem;
             }
             
             .credit-card-icon {
-                top: 1.5rem;
-                right: 1.5rem;
-                width: 45px;
-                height: 28px;
+                top: 1rem;
+                right: 1rem;
+                width: 55px;
+                height: 35px;
             }
 
-            .live-indicator {
-                top: 1.5rem;
-                left: 1.5rem;
+            .victory-indicator {
+                top: 1rem;
+                left: 1rem;
             }
 
             .started-info {
-                bottom: 2rem;
-            }
-
-            .battle-quote {
-                bottom: 4.5rem;
-                font-size: 0.6rem;
-            }
-
-            .warrior-left, .warrior-right {
-                width: 45%;
-            }
-
-            .swords-emblem {
-                width: 350px;
-                height: 350px;
-            }
-
-            .sword-left, .sword-right {
-                height: 250px;
-            }
-
-            .shield {
-                width: 150px;
-                height: 180px;
+                bottom: 1.5rem;
+                padding: 0 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Warrior Background Elements -->
-    <div class="warrior-bg">
-        <div class="warrior-left"></div>
-        <div class="warrior-right"></div>
-        <div class="fog"></div>
+    <!-- Celebration Background -->
+    <div class="celebration-bg">
+        <div class="rays"></div>
         
-        <div class="swords-emblem">
-            <div class="shield"></div>
-            <div class="sword-left"></div>
-            <div class="sword-right"></div>
+        <!-- Confetti -->
+        <div class="confetti-container">
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
         </div>
 
-        <div class="embers">
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-            <div class="ember"></div>
-        </div>
+        <!-- Sparkles -->
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+
+        <!-- Fireworks -->
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
     </div>
 
-    <div class="live-indicator">
-        <div class="live-dot"></div>
-        <span class="live-text">Battle Ongoing</span>
+    <div class="victory-indicator">
+        <div class="victory-dot"></div>
+        <span class="victory-text">Victory Achieved</span>
     </div>
 
     <div class="credit-card-icon"></div>
 
     <div class="container">
-        <p class="title">⚔️ Time in Battle ⚔️</p>
-        <h1 class="subtitle">until Bhupesh gets a credit card</h1>
+        <div class="victory-badge">🎉 Mission Complete 🎉</div>
+        
+        <h1 class="title">Bhupesh Finally Got<br>a Credit Card!</h1>
+        <p class="subtitle">The wait is over. The battle has been won.</p>
+        
+        <p class="timer-label">Total Time Waited</p>
         
         <div class="timer-container">
             <div class="timer-glow"></div>
-            <div class="timer" id="timer">00:00:00:00</div>
+            <div class="timer">11:05:28:13</div>
         </div>
 
         <div class="labels">
             <div class="label-group">
-                <div class="label-value" id="days">00</div>
+                <div class="label-value">11</div>
                 <div class="label-text">Days</div>
             </div>
             <div class="label-group">
-                <div class="label-value" id="hours">00</div>
+                <div class="label-value">05</div>
                 <div class="label-text">Hours</div>
             </div>
             <div class="label-group">
-                <div class="label-value" id="minutes">00</div>
+                <div class="label-value">28</div>
                 <div class="label-text">Minutes</div>
             </div>
             <div class="label-group">
-                <div class="label-value" id="seconds">00</div>
+                <div class="label-value">13</div>
                 <div class="label-text">Seconds</div>
             </div>
         </div>
-    </div>
 
-    <div class="battle-quote">"Victory awaits the one who never surrenders"</div>
+        <p class="celebration-message">"Patience and persistence conquer all things"</p>
+    </div>
 
     <div class="started-info">
-        The battle began on <span id="start-date"></span>
+        The journey began on <span>January 5, 2026</span> and ended on <span>January 16, 2026</span>
     </div>
-
-    <script>
-        // FIXED START TIME - January 5, 2026 at 4:01 PM - when Bhupesh started his credit card battle
-        // This is hardcoded so it's the same for everyone, on every device, forever!
-        const startTime = new Date('2026-01-05T16:01:00+05:30').getTime(); // 4:01 PM IST
-        
-        // Display start date
-        const startDate = new Date(startTime);
-        const options = { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        };
-        document.getElementById('start-date').textContent = startDate.toLocaleDateString('en-US', options);
-
-        function pad(num) {
-            return num.toString().padStart(2, '0');
-        }
-
-        function updateTimer() {
-            const now = Date.now();
-            const elapsed = now - startTime;
-
-            const seconds = Math.floor(elapsed / 1000) % 60;
-            const minutes = Math.floor(elapsed / (1000 * 60)) % 60;
-            const hours = Math.floor(elapsed / (1000 * 60 * 60)) % 24;
-            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-
-            // Update main timer display
-            document.getElementById('timer').textContent = 
-                `${pad(days)}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-
-            // Update individual labels
-            document.getElementById('days').textContent = pad(days);
-            document.getElementById('hours').textContent = pad(hours);
-            document.getElementById('minutes').textContent = pad(minutes);
-            document.getElementById('seconds').textContent = pad(seconds);
-        }
-
-        // Update immediately and then every second
-        updateTimer();
-        setInterval(updateTimer, 1000);
-
-        // Prevent any interaction that might pause the timer
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' || e.key === ' ') {
-                e.preventDefault();
-            }
-        });
-    </script>
 </body>
 </html>
